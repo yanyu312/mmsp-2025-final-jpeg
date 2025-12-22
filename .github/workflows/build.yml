@@ -1,0 +1,48 @@
+name: MMSP JPEG Final
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build-run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Download Kimberly.bmp
+        run: |
+          curl -o Kimberly.bmp https://raw.githubusercontent.com/cychiang-ntpu/mmsp-2025-final-jpeg/main/Kimberly.bmp
+
+      - name: Build
+        run: |
+          gcc encoder.c -o encoder -lm
+          gcc decoder.c -o decoder -lm
+
+      - name: Run Method 0
+        run: |
+          ./encoder 0 Kimberly.bmp R.txt G.txt B.txt dim.txt
+          ./decoder 0 ResKimberly.bmp R.txt G.txt B.txt dim.txt
+
+      - name: Run Method 1
+        run: |
+          ./encoder 1 Kimberly.bmp Qt_Y.txt Qt_Cb.txt Qt_Cr.txt dim.txt \
+            qF_Y.raw qF_Cb.raw qF_Cr.raw eF_Y.raw eF_Cb.raw eF_Cr.raw
+          ./decoder 1 QResKimberly.bmp Kimberly.bmp Qt_Y.txt Qt_Cb.txt Qt_Cr.txt dim.txt \
+            qF_Y.raw qF_Cb.raw qF_Cr.raw
+          ./decoder 1 ResKimberly.bmp Qt_Y.txt Qt_Cb.txt Qt_Cr.txt dim.txt \
+            qF_Y.raw qF_Cb.raw qF_Cr.raw eF_Y.raw eF_Cb.raw eF_Cr.raw
+
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: results
+          path: |
+            ResKimberly.bmp
+            QResKimberly.bmp
+            Qt_Y.txt
+            Qt_Cb.txt
+            Qt_Cr.txt
+            dim.txt
