@@ -92,7 +92,7 @@ qF_Y.raw qF_Cb.raw qF_Cr.raw
 - 採用 8×8 區塊為 JPEG 標準設計
 - 邊界補齊使用 edge replication
 - 由於量化關係，重建影像可能出現輕微失真
-- 本專題未實作 entropy coding（如 Huffman coding）
+- 本專題未實作 entropy coding
 ```
 ## 七、編譯方式
 ```
@@ -127,14 +127,14 @@ decoder 1 ResKimberly.bmp Qt_Y.txt Qt_Cb.txt Qt_Cr.txt dim.txt
 qF_Y.raw qF_Cb.raw qF_Cr.raw eF_Y.raw eF_Cb.raw eF_Cr.raw
 
 ---
-## 系統架構（Block Diagram）
+## Block Diagram
 
 BMP → RGB → YCbCr → Level Shift → 8×8 Blocking → DCT → Quantization → qF/eF  
 qF → Dequant → IDCT → YCbCr → RGB → BMP
 
 ---
 
-## 工作日誌（Work Log）
+## 工作日誌
 - 12/18：完成 BMP 讀寫
 - 12/19：完成 RGB 分離（Method 0）
 - 12/20：實作 YCbCr、8×8 DCT
@@ -145,7 +145,7 @@ qF → Dequant → IDCT → YCbCr → RGB → BMP
 
 ## 心得與反思
 
-本專題讓我實際從程式層面理解 JPEG 壓縮流程，  
+這次的期末作業讓我實際從程式層面理解 JPEG 壓縮流程，  
 包含色彩空間轉換、區塊式 DCT 與量化對影像品質的影響。  
 在實作 decoder 時，對參數規格與流程對齊有更深刻體會，  
 也學習如何利用 CI workflow 讓程式能被自動驗證與重現。
