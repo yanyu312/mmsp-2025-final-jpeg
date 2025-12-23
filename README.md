@@ -53,7 +53,6 @@ decoder 0 Res0.bmp R.txt G.txt B.txt dim.txt
 從 RGB 文字檔與影像尺寸資訊
 
 重建並輸出 BMP 圖檔
----
 ```
 ## 四、Method 1：JPEG-like 壓縮流程
 ```
@@ -73,8 +72,6 @@ qF_Y.raw qF_Cb.raw qF_Cr.raw eF_Y.raw eF_Cb.raw eF_Cr.raw
   - 量化後係數：qF_*.raw（int16）
   - DCT 係數：eF_*.raw（float32）
   - 影像尺寸：dim.txt
-
----
 ```
 ## 五、Decoder（Method 1）
 ```
@@ -91,8 +88,6 @@ qF_Y.raw qF_Cb.raw qF_Cr.raw
 - Inverse level shift（加回 128）
 - YCbCr → RGB 色彩轉換
 - 重建並輸出 BMP 圖檔
-
----
 ```
 ## 六、注意事項
 ```
@@ -100,8 +95,6 @@ qF_Y.raw qF_Cb.raw qF_Cr.raw
 - 邊界補齊使用 edge replication
 - 由於量化關係，重建影像可能出現輕微失真
 - 本專題未實作 entropy coding（如 Huffman coding）
-
----
 ```
 ## 七、編譯方式
 ```
@@ -109,8 +102,6 @@ qF_Y.raw qF_Cb.raw qF_Cr.raw
 
 gcc encoder.c -o encoder.exe -lm
 gcc decoder.c -o decoder.exe -lm
-
----
 ```
 ## 八、程式使用方法
 ```
@@ -133,7 +124,6 @@ decoder 1 ResKimberly.bmp Qt_Y.txt Qt_Cb.txt Qt_Cr.txt dim.txt
 qF_Y.raw qF_Cb.raw qF_Cr.raw eF_Y.raw eF_Cb.raw eF_Cr.raw
 
 ---
-
 ## 系統架構（Block Diagram）
 
 BMP → RGB → YCbCr → Level Shift → 8×8 Blocking → DCT → Quantization → qF/eF  
@@ -164,8 +154,6 @@ qF → Dequant → IDCT → YCbCr → RGB → BMP
 - 編譯 encoder / decoder
 - 執行 Method 0 與 Method 1
 - 將輸出結果上傳為 artifact 供評分使用
-
----
 ```
 ## 九、檔案結構
 ```
@@ -174,8 +162,6 @@ mmsp_final/
 ├─ decoder.c
 ├─ README.md
 └─ Kimberly.bmp
-
----
 ```
 ## 十、結論
 ```
