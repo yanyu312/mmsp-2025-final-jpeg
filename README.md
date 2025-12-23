@@ -54,6 +54,7 @@ decoder 0 Res0.bmp R.txt G.txt B.txt dim.txt
 ## 四、Method 1：JPEG-like 壓縮流程
 ```
 ### Encoder（Method 1）
+
 encoder 1 Kimberly.bmp Qt_Y.txt Qt_Cb.txt Qt_Cr.txt dim.txt
 qF_Y.raw qF_Cb.raw qF_Cr.raw eF_Y.raw eF_Cb.raw eF_Cr.raw
 
@@ -103,20 +104,25 @@ gcc decoder.c -o decoder.exe -lm
 ## 八、程式使用方法
 ```
 ### Encoder - Method 0
+
 encoder 0 Kimberly.bmp R.txt G.txt B.txt dim.txt
 
 ### Decoder - Method 0
+
 decoder 0 ResKimberly.bmp R.txt G.txt B.txt dim.txt
 
 ### Encoder - Method 1
+
 encoder 1 Kimberly.bmp Qt_Y.txt Qt_Cb.txt Qt_Cr.txt dim.txt
 qF_Y.raw qF_Cb.raw qF_Cr.raw eF_Y.raw eF_Cb.raw eF_Cr.raw
 
 ### Decoder - Method 1(a)
+
 decoder 1 QResKimberly.bmp Kimberly.bmp Qt_Y.txt Qt_Cb.txt Qt_Cr.txt dim.txt
 qF_Y.raw qF_Cb.raw qF_Cr.raw
 
 ### Decoder - Method 1(b)
+
 decoder 1 ResKimberly.bmp Qt_Y.txt Qt_Cb.txt Qt_Cr.txt dim.txt
 qF_Y.raw qF_Cb.raw qF_Cr.raw eF_Y.raw eF_Cb.raw eF_Cr.raw
 
