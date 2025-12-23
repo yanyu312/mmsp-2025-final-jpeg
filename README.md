@@ -32,17 +32,21 @@
 
 ### Encoder（Method 0）
 
-```bash
+```
 encoder 0 Kimberly.bmp R.txt G.txt B.txt dim.txt
+
 功能說明：
 -讀取 BMP 圖檔
 -將影像分離為 R / G / B 三個通道
+
 輸出：
 -R.txt、G.txt、B.txt
 -dim.txt（影像寬度與高度）
 
 Decoder（Method 0）
+
 decoder 0 Res0.bmp R.txt G.txt B.txt dim.txt
+
 功能說明：
 -從 RGB 文字檔與影像尺寸資訊
 -重建並輸出 BMP 圖檔
