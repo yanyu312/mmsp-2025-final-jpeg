@@ -54,9 +54,9 @@ decoder 0 Res0.bmp R.txt G.txt B.txt dim.txt
 
 重建並輸出 BMP 圖檔
 ---
-
+```
 ## 四、Method 1：JPEG-like 壓縮流程
-
+```
 ### Encoder（Method 1）
 encoder 1 Kimberly.bmp Qt_Y.txt Qt_Cb.txt Qt_Cr.txt dim.txt
 qF_Y.raw qF_Cb.raw qF_Cr.raw eF_Y.raw eF_Cb.raw eF_Cr.raw
@@ -75,9 +75,9 @@ qF_Y.raw qF_Cb.raw qF_Cr.raw eF_Y.raw eF_Cb.raw eF_Cr.raw
   - 影像尺寸：dim.txt
 
 ---
-
+```
 ## 五、Decoder（Method 1）
-
+```
 decoder 1 Res1.bmp Qt_Y.txt Qt_Cb.txt Qt_Cr.txt dim.txt
 qF_Y.raw qF_Cb.raw qF_Cr.raw
 
@@ -93,26 +93,27 @@ qF_Y.raw qF_Cb.raw qF_Cr.raw
 - 重建並輸出 BMP 圖檔
 
 ---
-
+```
 ## 六、注意事項
+```
 - 採用 8×8 區塊為 JPEG 標準設計
 - 邊界補齊使用 edge replication
 - 由於量化關係，重建影像可能出現輕微失真
 - 本專題未實作 entropy coding（如 Huffman coding）
 
 ---
-
+```
 ## 七、編譯方式
-
+```
 使用 Windows + MinGW GCC：
 
 gcc encoder.c -o encoder.exe -lm
 gcc decoder.c -o decoder.exe -lm
 
 ---
-
+```
 ## 八、程式使用方法
-
+```
 ### Encoder - Method 0
 encoder 0 Kimberly.bmp R.txt G.txt B.txt dim.txt
 
@@ -165,8 +166,9 @@ qF → Dequant → IDCT → YCbCr → RGB → BMP
 - 將輸出結果上傳為 artifact 供評分使用
 
 ---
-
+```
 ## 九、檔案結構
+```
 mmsp_final/
 ├─ encoder.c
 ├─ decoder.c
@@ -174,9 +176,9 @@ mmsp_final/
 └─ Kimberly.bmp
 
 ---
-
+```
 ## 十、結論
-
+```
 本專題成功實作一個 JPEG-like 影像壓縮與解壓縮系統，  
 完整涵蓋色彩空間轉換、8×8 區塊 DCT、量化與重建流程，  
 並能正確處理課程提供之 BMP 測試影像。
