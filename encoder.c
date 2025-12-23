@@ -2,7 +2,7 @@
 // Mode 0:
 //   encoder 0 input.bmp R.txt G.txt B.txt dim.txt
 //
-// Mode 1 (per your spec):
+// Mode 1 :
 //   encoder 1 input.bmp Qt_Y.txt Qt_Cb.txt Qt_Cr.txt dim.txt
 //           qF_Y.raw qF_Cb.raw qF_Cr.raw eF_Y.raw eF_Cb.raw eF_Cr.raw
 //
@@ -245,7 +245,7 @@ int main(int argc, char *argv[]) {
     }
 
     // -----------------------
-    // Mode 0 (your working base)
+    // Mode 0 
     // -----------------------
     if (strcmp(argv[1], "0") == 0) {
         if (argc != 7) {
@@ -273,7 +273,7 @@ int main(int argc, char *argv[]) {
     }
 
     // -----------------------
-    // Mode 1 (per spec you pasted)
+    // Mode 1 
     // -----------------------
     if (strcmp(argv[1], "1") == 0) {
         if (argc != 13) {
