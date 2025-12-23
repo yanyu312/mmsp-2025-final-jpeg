@@ -135,10 +135,12 @@ qF → Dequant → IDCT → YCbCr → RGB → BMP
 ---
 
 ## 工作日誌（Work Log）
-- 12/22：完成 BMP 讀寫與 RGB 分離（Method 0）
-- 12/23：實作 YCbCr、8×8 DCT、Quantization（Method 1 encoder）
-- 12/24：完成 decoder、支援 method 1(a)/1(b)，整合 GitHub Actions
-
+- 12/18：完成 BMP 讀寫
+- 12/19：完成 RGB 分離（Method 0）
+- 12/20：實作 YCbCr、8×8 DCT
+- 12/21：實作 Quantization（Method 1 encoder）
+- 12/22：完成 decoder、支援 method 1(a)/1(b)
+- 12/23：整合 GitHub Actions
 ---
 
 ## 心得與反思
@@ -156,7 +158,7 @@ qF → Dequant → IDCT → YCbCr → RGB → BMP
 - 自動下載 Kimberly.bmp
 - 編譯 encoder / decoder
 - 執行 Method 0 與 Method 1
-- 將輸出結果上傳為 artifact 供評分使用
+- 將輸出結果上傳為 artifact 
 ```
 ## 九、檔案結構
 ```
