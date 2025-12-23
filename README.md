@@ -54,7 +54,7 @@ decoder 0 Res0.bmp R.txt G.txt B.txt dim.txt
 
 重建並輸出 BMP 圖檔
 
-##四、Method 1：JPEG-like 壓縮流程
+四、Method 1：JPEG-like 壓縮流程
 Encoder（Method 1）
 encoder 1 Kimberly.bmp Qt_Y.txt Qt_Cb.txt Qt_Cr.txt dim.txt \
 qF_Y.raw qF_Cb.raw qF_Cr.raw eF_Y.raw eF_Cb.raw eF_Cr.raw
